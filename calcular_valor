@@ -1,0 +1,29 @@
+def calcular_valor_plano(valor_base, idade):
+    
+    if idade >= 0 and idade <= 18:
+        percentual = 1.0      # 100%
+    elif idade >= 19 and idade <= 28:
+        percentual = 1.5      # 150%
+    elif idade >= 29 and idade <= 38:
+        percentual = 2.25     # 225%
+    elif idade >= 39 and idade <= 48:
+        percentual = 2.4      # 240%
+    elif idade >= 49 and idade <= 58:
+        percentual = 3.5      # 350%
+    else:
+        percentual = 6.0      # 600%
+    
+    valor_mensal = valor_base * percentual
+    return valor_mensal
+
+
+print("Bem-vindo ao sistema de planos de saúde!")
+print("Desenvolvido por Joel [Seu Sobrenome Aqui]")
+
+
+valor_base = float(input("Informe o valor base do plano: "))
+idade = int(input("Informe a idade do cliente: "))
+
+
+valor_mensal = calcular_valor_plano(valor_base, idade)
+print(f"O valor mensal do plano é: R$ {valor_mensal:.2f}")
